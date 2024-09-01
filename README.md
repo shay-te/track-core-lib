@@ -104,7 +104,7 @@ Register new track information
 
 ### **Diagram**
 
-![PhanoAI](./PhanoAI.png)
+![PhanoAI](./diagram.png)
 
 
 
