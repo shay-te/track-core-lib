@@ -24,7 +24,7 @@ class TestTrackCoreLib(unittest.TestCase):
         # db = client['track']
         client.drop_database('track')
 
-    def test_pay(self):
+    def test_track(self):
         user_id = 1
         self.assertEqual(self.track_core_lib.track.count_user_document(user_id), 0)
         self.track_core_lib.track.register_entity(user_id, TrackType.FOOD, {})
@@ -39,3 +39,9 @@ class TestTrackCoreLib(unittest.TestCase):
 
         self.assertEqual(len(self.track_core_lib.track.all(user_id, TrackType.FOOD)), 2)
         self.assertEqual(self.track_core_lib.track.count_user_document(user_id), 2)
+
+        with freeze_time(lambda: forward_time_years(1)):
+            self.track_core_lib.track.register_entity(user_id, TrackType.FOOD, {})
+
+        self.assertEqual(len(self.track_core_lib.track.all(user_id, TrackType.FOOD)), 3)
+        self.assertEqual(self.track_core_lib.track.count_user_document(user_id), 3)
