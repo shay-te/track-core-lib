@@ -1,0 +1,17 @@
+# @package _global_
+core_lib:
+  tack_core_lib:
+    cache:
+      track:
+        type: memcached
+        url:
+          host: ${oc.env:MEMCACHED_HOST}
+          port: ${oc.env:MEMCACHED_PORT}
+  data:
+    mongodb:
+      url:
+        protocol: mongodb+srv
+        host: ${oc.env:MONGO_HOST}
+        port: ${oc.env:MONGO_PORT}
+        username: ${oc.env:MONGO_USERNAME}
+        password: ${oc.env:MONGO_PASSWORD}

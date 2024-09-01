@@ -1,0 +1,9 @@
+defaults:
+  - core_lib
+  - track_core_lib
+
+core_lib_module: track_core_lib
+
+hydra:
+  run:
+    dir: .
