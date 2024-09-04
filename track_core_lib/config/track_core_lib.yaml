@@ -8,10 +8,9 @@ core_lib:
           host: ${oc.env:MEMCACHED_HOST}
           port: ${oc.env:MEMCACHED_PORT}
   data:
-    mongodb:
+    sqlalchemy:
+      log_queries: false
+      create_db: true
       url:
-        protocol: mongodb+srv
-        host: ${oc.env:MONGO_HOST}
-        port: ${oc.env:MONGO_PORT}
-        username: ${oc.env:MONGO_USERNAME}
-        password: ${oc.env:MONGO_PASSWORD}
+        protocol: sqlite
+        file: track.db

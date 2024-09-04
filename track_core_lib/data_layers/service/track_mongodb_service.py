@@ -7,15 +7,15 @@ from core_lib.error_handling.status_code_exception import StatusCodeException
 
 from track_core_lib.constants import CACHE_TRACK
 from track_core_lib.data_layers.data.track import TrackType
-from track_core_lib.data_layers.data_access.track_data_access import TrackDataAccess
+from track_core_lib.data_layers.data_access.track_mongodb_data_access import TrackMongodbDataAccess
 
 
-class TrackSrvice(Service):
+class TrackMongodbSrvice(Service):
 
     CACHE_YEAR = 'user_full_{user_id}_{year}'
     CACHE_ALL = 'user_all_{user_id}_{type}'
 
-    def __init__(self, track_data_access: TrackDataAccess):
+    def __init__(self, track_data_access: TrackMongodbDataAccess):
         self._track_data_access = track_data_access
 
     def register_entity(self, user_id: int, type: TrackType, meta_data: dict):
@@ -52,3 +52,6 @@ class TrackSrvice(Service):
 
     def count_user_document(self, user_id: int):
         return self._track_data_access.count_user_document(user_id)
+
+    def delete(self, track_id: int):
+        return self._track_data_access.delete(track_id)

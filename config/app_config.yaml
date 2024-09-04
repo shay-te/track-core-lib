@@ -1,0 +1,15 @@
+defaults:
+  - _self_
+  - core_lib
+  - track_core_lib
+
+core_lib_module: admin_core_lib
+
+flask:
+  host: 0.0.0.0
+  port: 5000
+  cookie_name: auth_token
+
+hydra:
+  run:
+    dir: .

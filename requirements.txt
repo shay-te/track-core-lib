@@ -1,1 +1,2 @@
 core-lib
+waitress~=3.0.0

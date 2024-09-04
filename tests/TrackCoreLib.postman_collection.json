@@ -1,0 +1,91 @@
+{
+	"info": {
+		"_postman_id": "694d8f3f-a9ce-419a-953d-b9513acf7a29",
+		"name": "TrackCoreLib",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7419000",
+		"_collection_link": "https://bold-rocket-902946.postman.co/workspace/test~fc9e80cf-a0e3-4356-a121-f3d3293cee69/collection/7419000-694d8f3f-a9ce-419a-953d-b9513acf7a29?action=share&source=collection_link&creator=7419000"
+	},
+	"item": [
+		{
+			"name": "all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/exercise/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"exercise",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "update",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"type\": 1, \n    \"duration_minutes\": 10,\n    \"start_datetime\": \"2023-09-04T12:00:00.000Z\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/exercise/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"exercise",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/exercise/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"exercise",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

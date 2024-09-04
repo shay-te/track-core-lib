@@ -8,7 +8,7 @@ from track_core_lib.data_layers.data.mongodb.track_entry import TrackEntry
 from track_core_lib.data_layers.data.track import TrackType
 
 
-class TrackDataAccess(DataAccess):
+class TrackMongodbDataAccess(DataAccess):
 
     def __init__(self, db: MongoDBConnectionRegistry):
         self.mongodb = db
@@ -59,3 +59,7 @@ class TrackDataAccess(DataAccess):
         with self.mongodb.get() as client:
             query_id = {'user_id': user_id}
             return client.track.track.count_documents(query_id)
+
+    def delete(self, track_id: int):
+        with self.mongodb.get() as client:
+            return client.track.track.delete(track_id)
