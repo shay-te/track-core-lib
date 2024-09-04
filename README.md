@@ -14,6 +14,39 @@ open postman and send request to the server
 (there is no login in this example. so in the code he always assume the the user_id is 1)
 
 
+
+# Exercise Table Definition
+
+The `Exercise` table consists of the following columns:
+
+| Column Name       | Type           | Constraints                      | Description                                  |
+|-------------------|----------------|----------------------------------|----------------------------------------------|
+| `id`              | `Integer`      | `Primary Key`                     | Unique identifier for each exercise record.  |
+| `type`            | `IntEnum(ExerciseType)` | `Not Null`               | Type of exercise, defined by `ExerciseType`. |
+| `duration_minutes`| `Integer`      | `Not Null`                       | Duration of the exercise in minutes.        |
+| `start_datetime`  | `DateTime`     | `Not Null`                       | Start date and time of the exercise.        |
+
+### Indexes
+
+- **INDEX_TYPE**: Index on the `type` column to improve query performance.
+
+### ExerciseType Enum
+
+The `ExerciseType` enum defines the following exercise types:
+
+- `WALK` = 1
+- `RUN` = 2
+- `BICYCLE` = 3
+- `YOGA_PILATES` = 4
+- `FOOTBALL` = 5
+- `BASKET_BALL` = 6
+- `SWIMMING` = 7
+- `AEROBIC` = 8
+- `MEDITATION` = 9
+- `OTHER` = 100
+
+
+
 ```python
 import enum
 
