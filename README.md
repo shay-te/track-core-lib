@@ -19,12 +19,13 @@ open postman and send request to the server
 
 The `Exercise` table consists of the following columns:
 
-| Column Name       | Type           | Constraints                      | Description                                  |
-|-------------------|----------------|----------------------------------|----------------------------------------------|
-| `id`              | `Integer`      | `Primary Key`                     | Unique identifier for each exercise record.  |
-| `type`            | `IntEnum(ExerciseType)` | `Not Null`               | Type of exercise, defined by `ExerciseType`. |
-| `duration_minutes`| `Integer`      | `Not Null`                       | Duration of the exercise in minutes.        |
-| `start_datetime`  | `DateTime`     | `Not Null`                       | Start date and time of the exercise.        |
+| Column Name        | Type       | Constraints             | Description                                  |
+|--------------------|------------|-------------------------|----------------------------------------------|
+| `id`               | `Integer`  | `Primary Key`           | Unique identifier for each exercise record.  |
+| `user_id`          | `Integer`  | `Not Null`              | The user this record is belong to.           |
+| `type`             | `Integer`  | `Not Null`              | Type of exercise, defined by `ExerciseType`. |
+| `duration_minutes` | `Integer`  | `Not Null`              | Duration of the exercise in minutes.         |
+| `start_datetime`   | `DateTime` | `Not Null`              | Start date and time of the exercise.         |
 
 ### Indexes
 
